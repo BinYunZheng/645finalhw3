@@ -1,0 +1,25 @@
+
+.container-fluid {
+    margin-left: 10px;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 450px;
+    overflow: auto;
+}    
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+h1 {
+    font-family: cursive, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 49px;
+    color: red;
+    background: none;
+  	border: none;
+}

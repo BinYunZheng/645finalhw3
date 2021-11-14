@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" (click)="toggleState()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+
+        <div class="collapse navbar-collapse " [ngClass]="{ 'in': isIn }">
+            <ul class="nav navbar-nav navbar-right">
+                <li routerLinkActive="active current"><a routerLink=""> Home</a></li>
+                <li routerLinkActive="active current"><a routerLink="/newsurvey"> New Survey</a></li>
+                <li routerLinkActive="active current"><a routerLink="/allsurveys"> List All Surveys</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

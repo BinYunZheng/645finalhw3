@@ -1,0 +1,65 @@
+ .inventory-body{ 
+    background-image: url('/assets/images/sunset.jpg');
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    background-size: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+}
+
+.form-control {
+  width: auto;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border: 3px solid red;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948;
+}
+
+.form-group {
+  margin-left: 20px;
+  width: auto;
+}
+
+.placeholder {
+  color: #aaa;
+}
+
+hr {
+  border: 1px solid blue;
+}
+
+h4 {
+  font-family: cursive, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-variant: normal;
+  color: black;
+  margin-left: 20px;
+  background: none;
+  border: none;
+}
+
+h1 {
+    font-family: cursive, sans-serif;
+    font-weight: bold;
+    font-style: oblique;
+    font-variant: small-caps;
+    font-size: 49px;
+    color: red;
+    background: none;
+  	border: none;
+    text-align: center;
+}
+
+button {
+  margin-left: 20px;
+  width: auto;
+}

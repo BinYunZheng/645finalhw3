@@ -1,0 +1,165 @@
+
+<body class="inventory-body">
+<br>
+<br>
+<br>
+<h1>Student Survey Form</h1>
+<br>
+
+
+<div id="description">
+        <h4> Complete our survey form to share with us your campus visit experience. </h4>
+
+</div>
+<hr>
+
+<form #studentForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+                <label for="date">Date</label>
+                <input matInput class="form-control" name="date" id="date"
+                        #date="ngModel" [(ngModel)]="surveyDate" 
+                        [matDatepicker] = "datepicker1" 
+                        
+                        placeholder ="Pick a date"  required>
+
+                <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker1></mat-datepicker>
+        </div>
+
+        <div class="form-group">
+                <label for="id">Id No.</label>
+                <input  type="text" 
+                        class="form-control" 
+                        id="id" 
+                        placeholder="Id Number" 
+                        name="id"
+                        [(ngModel)]="model.id" 
+                        required 
+                        #id="ngModel">
+                
+                <div    *ngIf="id.touched && id.invalid" 
+                        class="alert alert-danger">
+                        Id is required.
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname"
+                        [(ngModel)]="model.fname" required #fname="ngModel">
+
+                <div *ngIf="fname.touched && fname.invalid" class="alert alert-danger">
+                        First Name is required.
+                </div>                
+        </div>
+
+        <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Last Name" name="lname"
+                        [(ngModel)]="model.lname" required #lname="ngModel">
+
+                <div *ngIf="lname.touched && lname.invalid" class="alert alert-danger">
+                        Last Name is required.
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Address" name="address"
+                        [(ngModel)]="model.address" required #address="ngModel">
+
+                <div *ngIf="address.touched && address.invalid" class="alert alert-danger">
+                        Address is required.
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="City" name="city"
+                        [(ngModel)]="model.city" required #city="ngModel">
+
+                <div *ngIf="city.touched && city.invalid" class="alert alert-danger">
+                        City is required.
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" placeholder="State" name="state"
+                        [(ngModel)]="model.state" required #state="ngModel">
+
+                <div *ngIf="state.touched && state.invalid" class="alert alert-danger">
+                        State is required.
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" class="form-control" id="zipcode" placeholder="Zip Code" name="zipcode"
+                        [(ngModel)]="model.zipcode" required #zipcode="ngModel">
+
+                <div *ngIf="zipcode.touched && zipcode.invalid" class="alert alert-danger">
+                        Zip code is required.
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" class="form-control" id="tel" placeholder="(###)###-####" name="phoneNumber"
+                        [(ngModel)]="model.phoneNumber" required pattern="\(\d{3}\)+\d{3}\-\d{4}" #phoneNumber="ngModel">
+
+                <div *ngIf="phoneNumber.touched && phoneNumber.invalid" class="alert alert-danger">
+                        Phone number is required.
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="name@domain.com" name="email"
+                        [(ngModel)]="model.email" required pattern="[^ @]*@[^ @]*" #email="ngModel">
+
+                <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+                        Email, which must at least contain the @ character, is required.
+                </div>
+
+        </div>
+
+        <div class="form-group">
+                <label>What did you like the most about the campus?</label>
+                <div class="form-check" *ngFor="let like of likes; let i=index;">
+                        <input type="checkbox" class="form-check-input" name="like{{like.id}}"
+                                [(ngModel)]="likes[i].checked" required />
+                        <label for="like{{like.id}}">{{like.name}}</label>
+                </div>
+        </div>
+
+        <div class="form-group">
+                <label>How did you become interested in our university?</label>
+                <br>
+                <label class="radio-inline" *ngFor="let interest of interests">
+                        <input type="radio" name="interest" [(ngModel)]="model.interest" [value]="interest" required />
+                        {{interest}}
+                </label>
+        </div>
+
+        <div class="form-group">
+                <label for="recommend"> How Likely Will You Recommend Our School to Other Prospective Students?</label>
+                <select class="form-control" id="recommend" name="recommend" [(ngModel)]="model.recommend">
+                        <option value="">Please select</option>
+                        <option *ngFor="let like of recommend" [value]="like">{{like}}
+                        </option>
+                </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit
+        </button>
+
+        <button type="reset" class="btn btn-danger">Cancel
+        </button>
+
+</form>
+
+<br>
+
+</body>
